@@ -5,8 +5,8 @@ import Loader from "../Loader";
 import { AuthContext } from "../../context/features";
 import Button from "../ui/Button";
 
-const local = "http://localhost:4000/api/v1";
-// const prod = "https://freshmart-backend-qhl6.onrender.com/api/v1";
+// const local = "http://localhost:4000/api/v1";
+const prod = "https://my-movie-guide-backend.onrender.com/api/v1";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ const LoginForm = () => {
         password,
       };
 
-      const loginResponse = await fetch(`${local}/auth/login`, {
+      const loginResponse = await fetch(`${prod}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

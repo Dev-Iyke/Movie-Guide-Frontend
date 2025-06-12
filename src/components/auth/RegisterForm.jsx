@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../Loader";
 import Button from "../ui/Button";
 
-const local = "http://localhost:4000/api/v1";
-// const prod = "https://freshmart-backend-qhl6.onrender.com/api/v1";
+// const local = "http://localhost:4000/api/v1";
+const prod = "https://my-movie-guide-backend.onrender.com/api/v1";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const RegisterForm = () => {
         lastName,
         role: "User",
       };
-      const signupResponse = await fetch(`${local}/auth/signup`, {
+      const signupResponse = await fetch(`${prod}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
