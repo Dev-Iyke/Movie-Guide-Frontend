@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Loader from "../Loader";
 import Button from "../ui/Button";
 
@@ -42,7 +42,7 @@ const RegisterForm = () => {
       if (response.success) {
         console.log(response);
         toast.success(response.message);
-        navigate("/");
+        navigate("/login");
       } else {
         toast.error(response.message);
         return;
@@ -150,6 +150,8 @@ const RegisterForm = () => {
         </div>
 
         <Button>Signup {signupLoading && <Loader />}</Button>
+
+        <p className="text-center mt-8">Already have an account? <NavLink className={'text-blue-600 underline'} to={'/login'}>Login</NavLink></p>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Loader from "../Loader";
 import { AuthContext } from "../../context/features";
 import Button from "../ui/Button";
@@ -151,6 +151,8 @@ const LoginForm = () => {
 
         <Button>Login {loginLoading && <Loader />}</Button>
       </form>
+
+      <p className="text-center mt-8">New here? <NavLink className={'text-blue-600 underline'} to={'/register'}>Sign Up</NavLink></p>
     </div>
   );
 };
