@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import { AuthContext } from "../../context/features";
-import Select from "react-dropdown-select";
 
 const Navbar = () => {
   const options = [
