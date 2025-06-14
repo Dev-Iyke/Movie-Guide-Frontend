@@ -5,7 +5,7 @@ import NotFoundPage from './pages/NotFoundPage'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import MovieDetailsPage from './pages/MovieDetailsPage'
-import UserInfoPage from './pages/UserInfoPage'
+import UserProfilePage from './pages/UserProfilePage'
 
 function App() {
 
@@ -14,8 +14,8 @@ function App() {
       <Route exact path='/' element={<LandingPage />} />
       <Route path='/register' element={<RegisterPage />} />
       <Route  path='/login' element={<LoginPage />} />
-      <Route  path='/movies-details/:id' element={<MovieDetailsPage />} />
-      <Route  path='/user' element={<UserInfoPage />} />
+      <Route  path='/movie-details/:id' element={<MovieDetailsPage />} />
+      <Route  path='/user' element={<UserProfilePage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
     

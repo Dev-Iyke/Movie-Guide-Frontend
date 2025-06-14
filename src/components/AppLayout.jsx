@@ -8,9 +8,9 @@ const AppLayout = ({ children }) => {
   const hideNavbar = hiddenRoutes.includes(pathname)
 
   return (
-    <div className="">
+    <div className={`${hideNavbar ? ' bg-gray-100' : 'bg-black'}`}>
         {!hideNavbar && <Navbar />}
-        <main className={`max-w-[1440px] ${hideNavbar ? ' bg-gray-100' : 'bg-black'} mx-auto`}>{children}</main>
+        <main className={`max-w-[1440px] w-[90%] ${hideNavbar ? ' bg-gray-100' : 'bg-black'} mx-auto`}>{children}</main>
         <ToastContainer />
         {!hideNavbar && <Footer />}
     </div>

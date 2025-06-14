@@ -3,15 +3,26 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Button from "../ui/Button";
 import { AuthContext } from "../../context/features";
+import Select from "react-dropdown-select";
 
 const Navbar = () => {
+  const options = [
+  {
+    id: 1,
+    name: 'Leanne Graham'
+  },
+  {
+    id: 2,
+    name: 'Ervin Howell'
+  }
+];
   const { isAuthenticated, logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
   return (
-    <div className="fixed w-full bg-white py-6">
+    <div className="fixed w-full bg-white py-4">
       <nav className="flex items-center justify-between w-[90%] md:w-[80%] max-w-[1440px] mx-auto">
-        <NavLink>
+        <NavLink to={'/'}>
           <div className="w-12 h-12">
             <img
               src="/movie-guide-logo.png"
@@ -25,6 +36,7 @@ const Navbar = () => {
           {isAuthenticated ? (
             <>
               <Button
+                className="bg-red-500 hover:bg-red-600"
                 onClick={() => {
                   logout();
                   navigate("/");

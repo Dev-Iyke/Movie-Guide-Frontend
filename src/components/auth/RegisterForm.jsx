@@ -5,7 +5,7 @@ import Loader from "../Loader";
 import Button from "../ui/Button";
 
 // const local = "http://localhost:4000/api/v1";
-const prod = "https://my-movie-guide-backend.onrender.com/api/v1";
+const prod = import.meta.env.VITE_APP_BACKEND_URL || "http://localhost:4000/api/v1";
 
 const RegisterForm = () => {
   const navigate = useNavigate();

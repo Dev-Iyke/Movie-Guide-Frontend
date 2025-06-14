@@ -5,18 +5,18 @@ import App from "./App.jsx";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppLayout from "./components/AppLayout.jsx";
 import AuthProvider from "./context/authContext.jsx";
-import WatchListProvider from "./context/WatchlistContext.jsx";
+import UserMoviesProvider from "./context/UserMoviesContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <WatchListProvider>
-        <Router>
+    <Router>
+      <AuthProvider>
+        <UserMoviesProvider>
           <AppLayout>
             <App />
           </AppLayout>
-        </Router>
-      </WatchListProvider>
-    </AuthProvider>
+        </UserMoviesProvider>
+      </AuthProvider>
+    </Router>
   </StrictMode>
 );

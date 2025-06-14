@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import Button from "../ui/Button";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/features";
 
 const Hero = () => {
   const navigate = useNavigate();
+  const {isAuthenticated} = useContext(AuthContext);
   return (
     <div className="flex flex-col items-center justify-center min-h-[100vh] pt-35 bg-[url('/hero-bg.jpg')] bg-cover bg-center text-white">
       <div className="max-w-[600px] text-center">
@@ -14,14 +17,17 @@ const Hero = () => {
           recommendations.
         </p>
       </div>
-      <Button
+      {!isAuthenticated ? <Button
         onClick={() => {
           navigate("/register");
         }}
         className="text-black mt-8"
       >
         Get Started
-      </Button>
+      </Button> : 
+      (
+        <h2 className="font-semibold text-3xl text-yellow-500">EXPLORE!</h2>
+      )}
     </div>
   );
 };
