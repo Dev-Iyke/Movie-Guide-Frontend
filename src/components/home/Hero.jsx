@@ -10,7 +10,7 @@ const Hero = () => {
     <div className="flex flex-col items-center justify-center min-h-[100vh] pt-35 bg-[url('/hero-bg.jpg')] bg-cover bg-center text-white">
       <div className="max-w-[600px] text-center">
         <h1 className="text-4xl md:text-6xl font-semibold mb-4">
-          Discover Your Next Favorite Movie
+          Figure Out Your Next Favorite Movie
         </h1>
         <p className="text-lg md:text-xl font-light mb-6">
           Explore a world of cinematic wonders with personalized
